@@ -1,0 +1,31 @@
+{
+  "name": "cloud2devicemsgs",
+  "version": "1.0.0",
+  "description": "send message to device from cloud",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+ "dependencies":{
+   "az-iot-bi" : "^0.1.18",
+   "azure-iot-device": "1.1.7",
+   "azure-iot-device-mqtt": "1.1.7",
+   "azure-iothub": "1.1.7"   
+ },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raj2sudha1/cloud2devicemsgs.git"
+  },
+  "keywords": [
+    "iot",
+    "hub",
+    "devices",
+    "azure"
+  ],
+  "author": "raj2sudha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raj2sudha1/cloud2devicemsgs/issues"
+  },
+  "homepage": "https://github.com/raj2sudha1/cloud2devicemsgs#readme"
+}
