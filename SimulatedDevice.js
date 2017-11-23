@@ -2,7 +2,7 @@
 
 var mqtt = require('azure-iot-device-mqtt').Mqtt;
 var DeviceClient = require('azure-iot-device').Client;
-var connectionString = 'HostName=IOTCOPSY.azure-devices.net;DeviceId=IOTCOP_Raspberry;SharedAccessKey=GDG7bmbZHZ+Izk2tLhtmgo6/x1zDzKeqTmeLMs9f4u0=';
+var connectionString = process.argv[2];
 var client = DeviceClient.fromConnectionString(connectionString, mqtt);
 
 function onWriteLine(request, response){
