@@ -1,17 +1,17 @@
 'use strict';
 
 	var Client = require('azure-iothub').Client;
-	var connectionString = 'HostName=IOTCOPPHANEENDRA.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=k71knkCs7VKJPdEzyhWe/d6jBXmuaEvmd/Q9xjkeUwg=';
-	var methodName = "writeLine";
-	var deviceId = "Raspberry";
+	var connectionString = process.argv[2];
+	var methodName = "WriteLine";
+	var deviceId = process.argv[3];
 
-	module.exports = function(context, req){
-		context.log('JavaScript HTTP trigger function processe');
+//	module.exports = function(context, req){
+//		context.log('JavaScript HTTP trigger function processe');
 		var client=Client.fromConnectionString(connectionString);
 		var methodParams = {
 			methodName:methodName,
-			payload: 'a line to be written',
-			timeoutInSeconds:30
+			payload: 'a line to be written $(date)',
+			timeoutInSeconds:60
 		
 		};
 		client.invokeDeviceMethod(deviceId, methodParams, function (err, result){
@@ -22,5 +22,5 @@
 				console.log(JSON.stringify(result, null, 2));
 			}
 		});	
-	};
+//	};
 
