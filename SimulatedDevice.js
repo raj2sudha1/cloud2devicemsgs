@@ -7,6 +7,10 @@ var client = DeviceClient.fromConnectionString(connectionString, mqtt);
 
 function onWriteLine(request, response){
 	console.log(request.payload);
+	var dateTime = require('node-datetime');
+	var dt = dateTime.create();
+	var formatted = dt.format('Y-m-d H:M:S');
+	console.log(formatted);
 /*	response.send(200, "Input was written to log.", function(err){
 		if(err){
 			console.error('An error occured when sending a method response:\n' + err.toString());
